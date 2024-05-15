@@ -204,3 +204,9 @@ CONSTRAINT fk_factura1 FOREIGN KEY (Id_factura) REFERENCES Factura(Id_factura),
 CONSTRAINT fk_producto1 FOREIGN KEY (Id_producto) REFERENCES Producto(Id_producto),
 CONSTRAINT fk_historialcarro1 FOREIGN KEY (Id_HistorialCarro) REFERENCES HistorialCarro(Id_historialCarro)
 ); 
+
+
+ALTER TABLE Usuario ADD (
+    Id_taller NUMBER,
+    CONSTRAINT fk_taller_usuario FOREIGN KEY (Id_taller) REFERENCES Taller(Id_taller)
+);
