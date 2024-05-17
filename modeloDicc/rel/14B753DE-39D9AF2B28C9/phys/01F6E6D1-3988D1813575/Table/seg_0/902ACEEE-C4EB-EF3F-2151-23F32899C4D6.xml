@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="HISTORIALCARRO" directorySegmentName="seg_0" id="902ACEEE-C4EB-EF3F-2151-23F32899C4D6">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<schemaObject>5A2850A5-3DC3-2FB1-17DF-14EF0C835284</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>FF71DB8E-47BF-0AFD-90A4-C73E5850D63E</segment>
+<tableSpace>A5185756-0D78-D9E5-BB18-DB51DED7296A</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ID_TALLER" id="14780C1D-97C6-CD70-6965-18FF48FDA489">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="FECHASERVICIO" id="7944F8F3-B043-F88C-FC0C-D9759CF8A080">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PLACA_CARRO" id="DFBA2815-92B5-8702-01F7-A084C36315DC">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DESCRIPCION" id="E03F4796-4880-3A69-9CC3-B7894DB4AC78">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID_HISTORIALCARRO" id="F2562059-6A42-606B-DF3A-818834FD8750">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_CARRO" id="06A110F2-4167-3CA7-8C51-87A98B912F55">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:55 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_TALLER_HISTORIALCARRO" id="B99C5935-3C8C-CF8A-B65C-A8B6EB324AA1">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:55 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="HISTORIALCARRO_PK" id="792DB911-2677-6292-B5DC-AD1DE314B71F">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:54 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<schemaObject>5A2850A5-3DC3-2FB1-17DF-14EF0C835284</schemaObject>
+<segment>F621BCC4-94CB-9C63-D6CA-E54078526BE3</segment>
+<tableSpace>A5185756-0D78-D9E5-BB18-DB51DED7296A</tableSpace>
+<indexSegment>F621BCC4-94CB-9C63-D6CA-E54078526BE3</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev20c>

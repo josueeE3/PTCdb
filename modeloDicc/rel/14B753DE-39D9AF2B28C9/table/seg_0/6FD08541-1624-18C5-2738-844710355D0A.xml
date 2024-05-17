@@ -1,0 +1,159 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6FD08541-1624-18C5-2738-844710355D0A" schemaObject="5A2850A5-3DC3-2FB1-17DF-14EF0C835284" name="FACTURA">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>C##FIXITDB</sourceObjSchema>
+<sourceObjName>FACTURA</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_FACTURA" id="E3414CDB-47CB-C4A2-561D-5ACBF1028ABA">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>FACTURA</sourceObjSchema>
+<sourceObjName>ID_FACTURA</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>20</autoIncrementCache>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="DUI_CLIENTE" id="8C17A761-0DF8-E0E5-2A74-F24A21766D8B">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>FACTURA</sourceObjSchema>
+<sourceObjName>DUI_CLIENTE</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AD288F9C-7B76-4E92-1C6D-474BE373A6F7" referredColumn="FFD55A61-4B8E-42F5-D2EE-664438C27E4D"/>
+</associations>
+</Column>
+<Column name="DUI_EMPLEADO" id="34457C91-7CF6-423E-15BC-F6CCD6E7E9B4">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>FACTURA</sourceObjSchema>
+<sourceObjName>DUI_EMPLEADO</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="501D20DE-9415-743C-0A10-A37CAED30DAB" referredColumn="733C720C-C91E-40DA-21D5-9C6EDCC89500"/>
+</associations>
+</Column>
+<Column name="ID_TALLER" id="8DD8EB2C-0887-1A90-9E1B-58C42295048C">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>FACTURA</sourceObjSchema>
+<sourceObjName>ID_TALLER</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8847F7F1-EFA8-D09E-ECE1-FB8C1F1B498B" referredColumn="60136391-CBE2-B358-388A-8224D7354E50"/>
+</associations>
+</Column>
+<Column name="FECHAEMISION" id="11AB5627-D302-6818-F22A-A72B2D1A1A01">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>FACTURA</sourceObjSchema>
+<sourceObjName>FECHAEMISION</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHAVENCIMIENTO" id="8C7415D3-7FDB-7613-6E32-0C7476605E55">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>FACTURA</sourceObjSchema>
+<sourceObjName>FECHAVENCIMIENTO</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A892E87E-9967-4C21-B436-5EEFB1116DB1" schemaObject="5A2850A5-3DC3-2FB1-17DF-14EF0C835284" name="FACTURA_PK">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>C##FIXITDB</sourceObjSchema>
+<sourceObjName>SYS_C008636</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:54 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E3414CDB-47CB-C4A2-561D-5ACBF1028ABA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9795B0A5-4023-BFE6-3B6E-FD7D0F9D1E01" name="FK_CLIENTE2">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:55 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8C17A761-0DF8-E0E5-2A74-F24A21766D8B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="726395EA-EA5B-78D4-91CF-BF4977CA99F7" name="FK_EMPLEADO2">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:55 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="34457C91-7CF6-423E-15BC-F6CCD6E7E9B4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E968C52B-4DE7-4E6A-1ACA-6C99B4D218A9" name="FK_TALLER_FACTURA">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:55 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8DD8EB2C-0887-1A90-9E1B-58C42295048C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

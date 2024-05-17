@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C4B0D4F5-6A33-7777-2391-C0597889A86D" containerWithKeyObject="29C41BED-AF56-6D92-15BC-3C593EA5708B" localFKIndex="421C67DE-2ED2-3A4C-79A5-8BEE0B501414" name="FK_ESTADO">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>C##FIXITDB</sourceObjSchema>
+<sourceObjName>FK_ESTADO</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:55 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<referredTableLongName>C##FIXITDB.ESTADOORDENSERVICIO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>27D70988-B600-8FA5-A95A-B45F1727EABF</referredTableID>
+<keyObject>EF696275-A0BE-CF4A-B51D-087214B219C9</keyObject>
+<referredKeyID>EF696275-A0BE-CF4A-B51D-087214B219C9</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>ID_ESTADO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

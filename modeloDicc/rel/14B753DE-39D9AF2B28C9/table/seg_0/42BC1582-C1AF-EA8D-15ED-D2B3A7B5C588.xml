@@ -1,0 +1,145 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="42BC1582-C1AF-EA8D-15ED-D2B3A7B5C588" schemaObject="5A2850A5-3DC3-2FB1-17DF-14EF0C835284" name="PRODUCTO">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>C##FIXITDB</sourceObjSchema>
+<sourceObjName>PRODUCTO</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_PRODUCTO" id="0DE68ADE-C7F5-23AB-C26B-C2BCB4B56693">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>PRODUCTO</sourceObjSchema>
+<sourceObjName>ID_PRODUCTO</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>20</autoIncrementCache>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="DUI_PROVEEDOR" id="3CA590DF-C5FE-7CED-FF8F-BA905A6CB45B">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>PRODUCTO</sourceObjSchema>
+<sourceObjName>DUI_PROVEEDOR</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F0059E44-A705-7A38-4A5A-484F02C86078" referredColumn="5FF20572-EC60-CC38-3706-0F090B524B7A"/>
+</associations>
+</Column>
+<Column name="ID_TALLER" id="1AB46B69-44B3-13AA-6F2C-EBCCBB91B160">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>PRODUCTO</sourceObjSchema>
+<sourceObjName>ID_TALLER</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CF0AB45A-B285-865D-A6D8-F01220AEDCF5" referredColumn="60136391-CBE2-B358-388A-8224D7354E50"/>
+</associations>
+</Column>
+<Column name="NOMBRE" id="5C495517-7282-2A1A-2259-B190C94274B4">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>PRODUCTO</sourceObjSchema>
+<sourceObjName>NOMBRE</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CANTIDADDISPONIBLE" id="E7E4FE2A-AE30-0CAD-5FA8-2554EC30B52C">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>PRODUCTO</sourceObjSchema>
+<sourceObjName>CANTIDADDISPONIBLE</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRECIO" id="61614AAB-7A57-4BC6-DF8A-24858863C431">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>PRODUCTO</sourceObjSchema>
+<sourceObjName>PRECIO</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F23D27FD-1E1A-8FC8-677F-73A259F29523" schemaObject="5A2850A5-3DC3-2FB1-17DF-14EF0C835284" name="PRODUCTO_PK">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>C##FIXITDB</sourceObjSchema>
+<sourceObjName>SYS_C008588</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:54 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0DE68ADE-C7F5-23AB-C26B-C2BCB4B56693"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8B915DC2-7E5D-3BC1-2CAB-189A6E6ED11E" name="FK_PROVEEDOR">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:55 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3CA590DF-C5FE-7CED-FF8F-BA905A6CB45B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DFE42F89-D1D6-1061-85B9-BB6D77896D45" name="FK_TALLER_PRODUCTO">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:55 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1AB46B69-44B3-13AA-6F2C-EBCCBB91B160"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

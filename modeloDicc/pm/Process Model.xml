@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProcessModel class="oracle.dbtools.crest.model.design.process.ProcessModel" name="Process Model" id="8F8D1C1C-4B9D-A7E1-B711-D2E0A6C94734">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:15 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</ProcessModel>

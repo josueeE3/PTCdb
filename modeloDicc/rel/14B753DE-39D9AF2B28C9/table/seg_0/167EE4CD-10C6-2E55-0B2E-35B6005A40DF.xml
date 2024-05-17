@@ -1,0 +1,118 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="167EE4CD-10C6-2E55-0B2E-35B6005A40DF" schemaObject="5A2850A5-3DC3-2FB1-17DF-14EF0C835284" name="SERVICIO">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>C##FIXITDB</sourceObjSchema>
+<sourceObjName>SERVICIO</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_SERVICIO" id="735349A0-71DC-1F2E-25B1-9C23136209D4">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>SERVICIO</sourceObjSchema>
+<sourceObjName>ID_SERVICIO</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>20</autoIncrementCache>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="ID_TALLER" id="B306CE10-A09C-366D-8591-3BBD9F2602E8">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>SERVICIO</sourceObjSchema>
+<sourceObjName>ID_TALLER</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="51465F36-EE28-BE63-D5CF-E9F95A8C13D1" referredColumn="60136391-CBE2-B358-388A-8224D7354E50"/>
+</associations>
+</Column>
+<Column name="NOMBRE" id="9A2BE27D-0608-6A76-A320-01821EEC3EBB">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>SERVICIO</sourceObjSchema>
+<sourceObjName>NOMBRE</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRIPCION" id="0138AEE3-76EB-36D1-249C-54BEF090E7C2">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>SERVICIO</sourceObjSchema>
+<sourceObjName>DESCRIPCION</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRECIO" id="5489378A-A837-3EBE-05DE-A152BBB80FA3">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>SERVICIO</sourceObjSchema>
+<sourceObjName>PRECIO</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6BE8469E-3205-B90F-1E3E-C4ACA4B2FBE7" schemaObject="5A2850A5-3DC3-2FB1-17DF-14EF0C835284" name="SERVICIO_PK">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>C##FIXITDB</sourceObjSchema>
+<sourceObjName>SYS_C008582</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:54 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="735349A0-71DC-1F2E-25B1-9C23136209D4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="232B34DE-D349-8708-D382-529A73FBD159" name="FK_TALLER_SERVICIO">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:55 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B306CE10-A09C-366D-8591-3BBD9F2602E8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

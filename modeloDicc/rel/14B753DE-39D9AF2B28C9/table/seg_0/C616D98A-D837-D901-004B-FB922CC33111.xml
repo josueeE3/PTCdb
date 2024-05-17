@@ -1,0 +1,155 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C616D98A-D837-D901-004B-FB922CC33111" schemaObject="5A2850A5-3DC3-2FB1-17DF-14EF0C835284" name="DETALLEPRODUCTO">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>C##FIXITDB</sourceObjSchema>
+<sourceObjName>DETALLEPRODUCTO</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_DETALLEPRODUCTO" id="6BF17843-C6BB-D84A-8A3F-563AA1F7D155">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>DETALLEPRODUCTO</sourceObjSchema>
+<sourceObjName>ID_DETALLEPRODUCTO</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>20</autoIncrementCache>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="ID_FACTURA" id="B2B98401-FDBC-7253-B72B-100CB5E90854">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>DETALLEPRODUCTO</sourceObjSchema>
+<sourceObjName>ID_FACTURA</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="71A1A494-820A-58B4-8167-8F0C4170FB0C" referredColumn="E3414CDB-47CB-C4A2-561D-5ACBF1028ABA"/>
+</associations>
+</Column>
+<Column name="ID_PRODUCTO" id="B5A7A724-D920-DB9E-8491-5F8AABBDF5BE">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>DETALLEPRODUCTO</sourceObjSchema>
+<sourceObjName>ID_PRODUCTO</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5CC1C391-9731-9CA3-BD09-335BCE95199B" referredColumn="0DE68ADE-C7F5-23AB-C26B-C2BCB4B56693"/>
+</associations>
+</Column>
+<Column name="ID_HISTORIALCARRO" id="AEDB9FE5-64D5-08E1-29C2-F46061EFE7A5">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>DETALLEPRODUCTO</sourceObjSchema>
+<sourceObjName>ID_HISTORIALCARRO</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E6919C99-94DD-1B3A-67F3-753E4AD0145D" referredColumn="F2562059-6A42-606B-DF3A-818834FD8750"/>
+</associations>
+</Column>
+<Column name="CANTIDAD" id="3FDB8BFE-DF0B-6944-E452-BEBC1EC8B3EB">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>DETALLEPRODUCTO</sourceObjSchema>
+<sourceObjName>CANTIDAD</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TOTAL" id="BF286B24-C66D-45C2-F0B3-D09CBDE07EE4">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>DETALLEPRODUCTO</sourceObjSchema>
+<sourceObjName>TOTAL</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A4C90EB9-31D3-E8B6-2CFA-874087E29A0A" schemaObject="5A2850A5-3DC3-2FB1-17DF-14EF0C835284" name="DETALLEPRODUCTO_PK">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>C##FIXITDB</sourceObjSchema>
+<sourceObjName>SYS_C008649</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:54 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6BF17843-C6BB-D84A-8A3F-563AA1F7D155"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="04F7EE4C-D988-4333-8B6A-DED9B89D1520" name="FK_FACTURA1">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:55 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B2B98401-FDBC-7253-B72B-100CB5E90854"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="88C50A54-615D-7318-ACFE-AB6648B52684" name="FK_HISTORIALCARRO1">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:55 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AEDB9FE5-64D5-08E1-29C2-F46061EFE7A5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EB18B2E2-02B2-C172-D874-7DF5F7922CFA" name="FK_PRODUCTO1">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:55 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B5A7A724-D920-DB9E-8491-5F8AABBDF5BE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

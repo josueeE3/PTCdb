@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="2190EACA-47FD-BA4A-5193-B98A6AF6632D" containerWithKeyObject="8B6A05F6-BEF3-990C-1757-679B7C692DB4" localFKIndex="7601D9F2-DF8D-349F-4419-32DF8551D550" name="FK_ROL">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>C##FIXITDB</sourceObjSchema>
+<sourceObjName>FK_ROL</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:55 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<referredTableLongName>C##FIXITDB.ROL</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>7F9B9012-14F2-E367-B57E-78F030A57871</referredTableID>
+<keyObject>464D1CFC-4EF9-3ABF-1DD3-79C752B3EBB7</keyObject>
+<referredKeyID>464D1CFC-4EF9-3ABF-1DD3-79C752B3EBB7</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>ID_ROL</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

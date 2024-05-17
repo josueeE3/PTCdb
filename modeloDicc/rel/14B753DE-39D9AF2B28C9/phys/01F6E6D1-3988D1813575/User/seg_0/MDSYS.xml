@@ -1,0 +1,25 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<UserOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g" name="MDSYS" directorySegmentName="seg_0" id="MDSYS">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjName>MDSYS</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:31 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<schemaObject>A8B6997D-A53C-01B9-D4BD-2EDDB1C3D92C</schemaObject>
+<nullInstance>true</nullInstance>
+<storableNullInstance>true</storableNullInstance>
+<privileges>INHERIT ANY PRIVILEGES, ADMINISTER DATABASE TRIGGER, CREATE TRIGGER, CREATE ANY SEQUENCE, CREATE SEQUENCE, CREATE VIEW, DROP PUBLIC SYNONYM, CREATE PUBLIC SYNONYM, CREATE TABLE</privileges>
+<profile>DEFAULT</profile>
+<quotaItems>
+<QuotaItem class="oracle.dbtools.crest.model.design.storage.oracle.v10g.QuotaItemOraclev10g" name="QuotaItem2" id="9C5197BA-C1EC-147F-FA95-0001050D03B9">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 22:39:49 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+</QuotaItem>
+<QuotaItem class="oracle.dbtools.crest.model.design.storage.oracle.v10g.QuotaItemOraclev10g" name="QuotaItem3" id="743D7CF3-FF5E-3F83-D779-01D2C2EA75F8">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 22:39:49 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+</QuotaItem>
+</quotaItems>
+</UserOraclev10g>

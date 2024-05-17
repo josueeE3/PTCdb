@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="MARCA" directorySegmentName="seg_0" id="681764B5-792C-58E8-7B17-766367639572">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<schemaObject>5A2850A5-3DC3-2FB1-17DF-14EF0C835284</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>FF71DB8E-47BF-0AFD-90A4-C73E5850D63E</segment>
+<tableSpace>A5185756-0D78-D9E5-BB18-DB51DED7296A</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="NOMBRE" id="0A17CCBF-C3CF-D767-FC20-7E2FD5D847DC">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID_MARCA" id="32391B39-85E4-E2C0-D1D6-216FFE4E06DA">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+<ColumnProxy name="DESCRIPCION" id="C720E0CB-DB83-9EE2-EE4D-B2F185902315">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="MARCA_PK" id="D58E3B33-A553-26DC-2B4C-04A20F705506">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:54 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<schemaObject>5A2850A5-3DC3-2FB1-17DF-14EF0C835284</schemaObject>
+<segment>F621BCC4-94CB-9C63-D6CA-E54078526BE3</segment>
+<tableSpace>A5185756-0D78-D9E5-BB18-DB51DED7296A</tableSpace>
+<indexSegment>F621BCC4-94CB-9C63-D6CA-E54078526BE3</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev20c>

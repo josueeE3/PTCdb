@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="4034B494-753A-CE09-6A8C-34ED209C1E0D" containerWithKeyObject="902ACEEE-C4EB-EF3F-2151-23F32899C4D6" localFKIndex="06A110F2-4167-3CA7-8C51-87A98B912F55" name="FK_CARRO">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>C##FIXITDB</sourceObjSchema>
+<sourceObjName>FK_CARRO</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:55 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<referredTableLongName>C##FIXITDB.CARRO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>AC010CA3-D271-E895-7609-96384055E2F2</referredTableID>
+<keyObject>04380FA7-3FD1-BC35-9070-17964C6AEB2B</keyObject>
+<referredKeyID>04380FA7-3FD1-BC35-9070-17964C6AEB2B</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>PLACA_CARRO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

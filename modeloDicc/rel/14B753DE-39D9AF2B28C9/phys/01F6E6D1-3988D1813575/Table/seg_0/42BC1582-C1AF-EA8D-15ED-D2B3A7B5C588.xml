@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="PRODUCTO" directorySegmentName="seg_0" id="42BC1582-C1AF-EA8D-15ED-D2B3A7B5C588">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<schemaObject>5A2850A5-3DC3-2FB1-17DF-14EF0C835284</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>FF71DB8E-47BF-0AFD-90A4-C73E5850D63E</segment>
+<tableSpace>A5185756-0D78-D9E5-BB18-DB51DED7296A</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ID_PRODUCTO" id="0DE68ADE-C7F5-23AB-C26B-C2BCB4B56693">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+<ColumnProxy name="ID_TALLER" id="1AB46B69-44B3-13AA-6F2C-EBCCBB91B160">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DUI_PROVEEDOR" id="3CA590DF-C5FE-7CED-FF8F-BA905A6CB45B">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NOMBRE" id="5C495517-7282-2A1A-2259-B190C94274B4">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRECIO" id="61614AAB-7A57-4BC6-DF8A-24858863C431">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CANTIDADDISPONIBLE" id="E7E4FE2A-AE30-0CAD-5FA8-2554EC30B52C">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_PROVEEDOR" id="8B915DC2-7E5D-3BC1-2CAB-189A6E6ED11E">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:55 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_TALLER_PRODUCTO" id="DFE42F89-D1D6-1061-85B9-BB6D77896D45">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:55 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PRODUCTO_PK" id="F23D27FD-1E1A-8FC8-677F-73A259F29523">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:54 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<schemaObject>5A2850A5-3DC3-2FB1-17DF-14EF0C835284</schemaObject>
+<segment>F621BCC4-94CB-9C63-D6CA-E54078526BE3</segment>
+<tableSpace>A5185756-0D78-D9E5-BB18-DB51DED7296A</tableSpace>
+<indexSegment>F621BCC4-94CB-9C63-D6CA-E54078526BE3</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev20c>

@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<relationalModel class="oracle.dbtools.crest.model.design.relational.RelationalDesign" name="Relational_1" id="14B753DE-CA17-E28F-9201-39D9AF2B28C9" mainViewID="BB34C690-6610-E315-8F6B-840C133ED5BB">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:19 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+<selectedRDBMSSite>01F6E6D1-21D0-CFBD-ABDD-3988D1813575</selectedRDBMSSite>
+<importConnectionStamps>
+<importConnectionStamp class="oracle.dbtools.crest.imports.DBConnectionStamp">
+<connName>FixitDB_</connName>
+<connUser>C##fixitdb</connUser>
+<connType>1</connType>
+</importConnectionStamp>
+</importConnectionStamps>
+</relationalModel>

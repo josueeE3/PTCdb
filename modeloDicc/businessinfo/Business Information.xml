@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="88B9E871-E4D0-CCBE-00D6-115977FE596B">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:15 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</BusinessInfoDesign>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="925159B6-3C85-911D-9D2E-C909677C4680" containerWithKeyObject="D5173988-7CCF-811C-6ED6-318C1759747B" localFKIndex="6E8A3FBA-3772-42A2-B05B-55842A6C2A99" name="FK_EMPLEADO1">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>C##FIXITDB</sourceObjSchema>
+<sourceObjName>FK_EMPLEADO1</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:55 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<referredTableLongName>C##FIXITDB.EMPLEADO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>4C845A54-F6DF-BBEF-2332-46ED041122F5</referredTableID>
+<keyObject>85A400EE-554E-FFE6-63CE-510ECD959A0F</keyObject>
+<referredKeyID>85A400EE-554E-FFE6-63CE-510ECD959A0F</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>DUI_EMPLEADO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

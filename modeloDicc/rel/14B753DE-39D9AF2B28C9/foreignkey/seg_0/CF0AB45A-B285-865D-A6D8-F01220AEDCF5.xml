@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="CF0AB45A-B285-865D-A6D8-F01220AEDCF5" containerWithKeyObject="42BC1582-C1AF-EA8D-15ED-D2B3A7B5C588" localFKIndex="DFE42F89-D1D6-1061-85B9-BB6D77896D45" name="FK_TALLER_PRODUCTO">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>C##FIXITDB</sourceObjSchema>
+<sourceObjName>FK_TALLER_PRODUCTO</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:55 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<referredTableLongName>C##FIXITDB.TALLER</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>74529810-BB04-9804-830D-62B761D0BC6C</referredTableID>
+<keyObject>B4312774-B2E0-D48E-B5BD-02B6CDF0440A</keyObject>
+<referredKeyID>B4312774-B2E0-D48E-B5BD-02B6CDF0440A</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>ID_TALLER</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

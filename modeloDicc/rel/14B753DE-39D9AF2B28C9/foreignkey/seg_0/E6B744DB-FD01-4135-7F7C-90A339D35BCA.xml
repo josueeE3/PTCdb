@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E6B744DB-FD01-4135-7F7C-90A339D35BCA" containerWithKeyObject="D5173988-7CCF-811C-6ED6-318C1759747B" localFKIndex="91E0A91F-418D-CBF6-6509-596D92E83718" name="FK_CITA1">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>C##FIXITDB</sourceObjSchema>
+<sourceObjName>FK_CITA1</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:55 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<referredTableLongName>C##FIXITDB.CITA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D7FEF942-AFA4-6C38-641B-880693DD8F13</referredTableID>
+<keyObject>63955760-0BDB-FD18-0CE0-52FA581133F7</keyObject>
+<referredKeyID>63955760-0BDB-FD18-0CE0-52FA581133F7</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>ID_CITA</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

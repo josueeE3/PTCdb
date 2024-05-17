@@ -1,0 +1,142 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="157A8DBF-2295-2C31-3342-B306B4FCA373" schemaObject="5A2850A5-3DC3-2FB1-17DF-14EF0C835284" name="DETALLESERVICIO">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>C##FIXITDB</sourceObjSchema>
+<sourceObjName>DETALLESERVICIO</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_DETALLESERVICIO" id="078D3DC3-B486-9B6A-7A40-E80257C6FDBA">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>DETALLESERVICIO</sourceObjSchema>
+<sourceObjName>ID_DETALLESERVICIO</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>20</autoIncrementCache>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="ID_FACTURA" id="FC0FE8DD-F756-F70C-3303-DA336DFB4025">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>DETALLESERVICIO</sourceObjSchema>
+<sourceObjName>ID_FACTURA</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E5C7C447-352F-4237-0755-1091E8F30F4B" referredColumn="E3414CDB-47CB-C4A2-561D-5ACBF1028ABA"/>
+</associations>
+</Column>
+<Column name="ID_SERVICIO" id="7F816C75-232D-99CA-E285-B828348E3E1C">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>DETALLESERVICIO</sourceObjSchema>
+<sourceObjName>ID_SERVICIO</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="147BD541-CB9B-44B5-53F3-83B172997995" referredColumn="735349A0-71DC-1F2E-25B1-9C23136209D4"/>
+</associations>
+</Column>
+<Column name="ID_HISTORIALCARRO" id="DFDCF766-4D2B-DF9B-C600-C26817F67AB2">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>DETALLESERVICIO</sourceObjSchema>
+<sourceObjName>ID_HISTORIALCARRO</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9E19B28C-E722-98E2-8255-AA9D46A8F0F4" referredColumn="F2562059-6A42-606B-DF3A-818834FD8750"/>
+</associations>
+</Column>
+<Column name="TOTAL" id="7BC301BF-E72B-D0DE-C651-237EBCC0305C">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>DETALLESERVICIO</sourceObjSchema>
+<sourceObjName>TOTAL</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D8ABD521-8FAE-7AD4-97D6-8B0B01BF845C" schemaObject="5A2850A5-3DC3-2FB1-17DF-14EF0C835284" name="DETALLESERVICIO_PK">
+<sourceConnName>FixitDB_</sourceConnName>
+<sourceObjSchema>C##FIXITDB</sourceObjSchema>
+<sourceObjName>SYS_C008642</sourceObjName>
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:54 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="078D3DC3-B486-9B6A-7A40-E80257C6FDBA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2BA11AED-A884-0219-3B5D-9036E435AD82" name="FK_FACTURA">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:55 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FC0FE8DD-F756-F70C-3303-DA336DFB4025"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="37759D80-6567-590F-24BD-582D0C24500F" name="FK_HISTORIALCARRO">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:55 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DFDCF766-4D2B-DF9B-C600-C26817F67AB2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8AF974F6-85B8-C72B-ACDA-3431FD16B06A" name="FK_SERVICIO">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:55 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7F816C75-232D-99CA-E285-B828348E3E1C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

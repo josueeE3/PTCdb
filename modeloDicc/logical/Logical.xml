@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="484DC11D-940F-C6D9-FC2F-C74D5F2C2150" mainViewID="7608ED13-7822-C5B7-FB96-31E829BCCAF8">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:15 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

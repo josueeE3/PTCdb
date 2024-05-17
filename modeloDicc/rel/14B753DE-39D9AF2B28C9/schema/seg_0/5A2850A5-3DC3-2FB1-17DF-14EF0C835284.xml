@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SchemaObject class="oracle.dbtools.crest.model.design.relational.SchemaObject" name="C##FIXITDB" directorySegmentName="seg_0" id="5A2850A5-3DC3-2FB1-17DF-14EF0C835284">
+<createdBy>jjove</createdBy>
+<createdTime>2024-05-15 04:46:53 UTC</createdTime>
+<ownerDesignName>modeloDicc</ownerDesignName>
+<importedID>62DD50B3-8918-2874-8A3C-25EFF696377A</importedID>
+</SchemaObject>
