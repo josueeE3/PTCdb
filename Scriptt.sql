@@ -67,9 +67,7 @@ Precio NUMBER(10, 2) CHECK (Precio > 0)
 Create table Producto(
 UUID_producto vARCHAR2(50) PRIMARY KEY,
 Nombre VARCHAR2(50) NOT NULL,
-ImagenProducto BLOB,
-CantidadDisponible NUMBER NOT NULL CHECK (CantidadDisponible > 0),
-Precio NUMBER(10, 2) NOT NULL CHECK (Precio > 0)
+ImagenProducto BLOB
 );
 
 
@@ -78,10 +76,8 @@ UUID_repuesto VARCHAR2(50) PRIMARY KEY,
 UUID_categoria VARCHAR2(50) NOT NULL,
 Nombre VARCHAR2(100) NOT NULL,
 Descripcion VARCHAR2(255),
-Precio NUMBER(10, 2) NOT NULL CHECK (Precio > 0) ,
-Cantidad NUMBER NOT NULL CHECK (Cantidad > 0),
+ImagenRepuesto BLOB,
 CompatibilidadCarro VARCHAR2(255),
-FechaIngreso DATE NOT NULL,
 
 CONSTRAINT fk_categoria_repuesto FOREIGN KEY (UUID_categoria) REFERENCES CategoriaRepuesto(UUID_categoria)
 );
@@ -216,6 +212,9 @@ Create table Producto_Proveedor(
 UUID VARCHAR2(50) NOT NULL,
 UUID_producto VARCHAR2(50) NOT NULL,
 Dui_proveedor VARCHAR2(10) NOT NULL,
+Precio NUMBER(10, 2) NOT NULL CHECK (Precio > 0),
+Cantidad NUMBER(10, 2) NOT NULL CHECK (Precio > 0) ,
+FechaSuministro DATE NOT NULL,
 
 CONSTRAINT fk_producto_proveedor FOREIGN KEY (UUID_producto) REFERENCES Producto(UUID_producto),
 CONSTRAINT fk_proveedor_producto FOREIGN KEY (Dui_proveedor) REFERENCES Proveedor(Dui_proveedor)
@@ -225,6 +224,9 @@ Create table Repuesto_Proveedor(
 UUID VARCHAR2(50) NOT NULL,
 UUID_repuesto VARCHAR2(50) NOT NULL,
 Dui_proveedor VARCHAR2(10) NOT NULL,
+Precio NUMBER(10, 2) NOT NULL CHECK (Precio > 0),
+Cantidad NUMBER(10, 2) NOT NULL CHECK (Precio > 0) ,
+FechaSuministro DATE NOT NULL,
 
 CONSTRAINT fk_repuesto_proveedor FOREIGN KEY (UUID_repuesto) REFERENCES Repuesto(UUID_repuesto),
 CONSTRAINT fk_proveedor_repuesto FOREIGN KEY (Dui_proveedor) REFERENCES Proveedor(Dui_proveedor)
@@ -307,8 +309,21 @@ BEGIN
 END;
 
 
-CREATE OR REPLACE TRIGGER trig_verificar_fecha_actual
-BEFORE INSERT OR UPDATE ON Repuesto
+CREATE OR REPLACE TRIGGER trig_verifi_fecha_actual
+BEFORE INSERT OR UPDATE ON Producto_Proveedor
+FOR EACH ROW
+DECLARE
+    fecha_actual DATE;
+BEGIN
+    fecha_actual := SYSDATE;  
+    
+    IF :NEW.FechaIngreso <> fecha_actual THEN
+        RAISE_APPLICATION_ERROR(-20001, 'La fecha de ingreso debe ser la fecha actual.');
+    END IF;
+END;
+
+CREATE OR REPLACE TRIGGER trig_verifica_fecha_actual
+BEFORE INSERT OR UPDATE ON Repuesto_Proveedor
 FOR EACH ROW
 DECLARE
     fecha_actual DATE;
