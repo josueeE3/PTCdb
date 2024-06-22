@@ -353,6 +353,8 @@ INSERT ALL
   INTO CategoriaRepuesto (UUID_categoria, Nombre) VALUES (SYS_GUID(), 'Suspensión')
   INTO CategoriaRepuesto (UUID_categoria, Nombre) VALUES (SYS_GUID(), 'Eléctrico')
 SELECT * FROM dual;
+
+
 INSERT ALL
     INTO Usuario (UUID_usuario, UUID_rol, Nombre, Contrasena) 
     VALUES (SYS_GUID(),'BA661275AA5A48DBB713F4ADD3DCD6C0', 'Mario', 'mario123')
@@ -430,31 +432,30 @@ INSERT ALL
     VALUES (SYS_GUID(), 'Diagnóstico Completo', 'Diagnóstico completo del vehículo', 109.99)
 SELECT * FROM dual;
 
-
 INSERT ALL
-    INTO Producto (UUID_producto, Nombre, ImagenProducto, CantidadDisponible, Precio) 
-    VALUES (SYS_GUID(),'Aceite de motor', EMPTY_BLOB(), 50, 15.99)
-    INTO Producto (UUID_producto, Nombre, ImagenProducto, CantidadDisponible, Precio) 
-    VALUES (SYS_GUID(), 'Filtro de aire', EMPTY_BLOB(), 30, 9.99)
-    INTO Producto (UUID_producto,Nombre, ImagenProducto, CantidadDisponible, Precio) 
-    VALUES (SYS_GUID(), 'Batería de coche', EMPTY_BLOB(), 20, 79.99)
-    INTO Producto (UUID_producto, Nombre, ImagenProducto, CantidadDisponible, Precio) 
-    VALUES (SYS_GUID(), 'Pastillas de freno', EMPTY_BLOB(), 40, 26.99)
-    INTO Producto (UUID_producto, Nombre, ImagenProducto, CantidadDisponible, Precio) 
-    VALUES (SYS_GUID(), 'Neumático', EMPTY_BLOB(), 25, 59.99)
+    INTO Producto (UUID_producto, Nombre, ImagenProducto) 
+    VALUES (SYS_GUID(),'Aceite de motor', EMPTY_BLOB())
+    INTO Producto (UUID_producto, Nombre, ImagenProducto) 
+    VALUES (SYS_GUID(), 'Filtro de aire', EMPTY_BLOB())
+    INTO Producto (UUID_producto,Nombre, ImagenProducto) 
+    VALUES (SYS_GUID(), 'Batería de coche', EMPTY_BLOB())
+    INTO Producto (UUID_producto, Nombre, ImagenProducto) 
+    VALUES (SYS_GUID(), 'Pastillas de freno', EMPTY_BLOB())
+    INTO Producto (UUID_producto, Nombre, ImagenProducto) 
+    VALUES (SYS_GUID(), 'Neumático', EMPTY_BLOB())
 SELECT * FROM dual;
 
 INSERT ALL
-  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, Precio, Cantidad, CompatibilidadCarro, FechaIngreso)
-  VALUES (SYS_GUID(), 'F5C5FE343B784909BE3D14A6E455E054', 'Filtro de Aceite', 'Filtro de aceite para motores estándar', 17.99, 10, 'Varios modelos', SYSDATE)
-  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, Precio, Cantidad, CompatibilidadCarro, FechaIngreso)
-  VALUES (SYS_GUID(), 'A640FE058D044BAA85CCE93BBBFCDC52', 'Pastillas de Freno', 'Pastillas de freno de alto rendimiento', 39.99, 20, 'Varios modelos', SYSDATE)
-  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, Precio, Cantidad, CompatibilidadCarro, FechaIngreso)
-  VALUES (SYS_GUID(), 'F3A05BC5CF564A54818DE4FDDF8563AC', 'Batería de Coche', 'Batería de 12V para automóviles', 89.99, 30, 'Compatibilidad amplia', SYSDATE)
-  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, Precio, Cantidad, CompatibilidadCarro, FechaIngreso)
-  VALUES (SYS_GUID(), '01B90BE3597E4F249BBAAFE9ACDBFB80', 'Amortiguador', 'Amortiguador para suspensión delantera', 129.50, 20, 'Varios modelos', SYSDATE)
-  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, Precio, Cantidad, CompatibilidadCarro, FechaIngreso)
-  VALUES (SYS_GUID(), '0B19CB1D04324264939B8390A15FC79D', 'Lámpara LED', 'Lámpara LED de alto brillo para faros', 19.95, 20, 'Varios modelos', SYSDATE)
+  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, ImagenRepuesto, CompatibilidadCarro)
+  VALUES (SYS_GUID(), 'F5C5FE343B784909BE3D14A6E455E054', 'Filtro de Aceite', 'Filtro de aceite para motores estándar',EMPTY_BLOB(), 'Varios modelos')
+  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, ImagenRepuesto, CompatibilidadCarro)
+  VALUES (SYS_GUID(), 'A640FE058D044BAA85CCE93BBBFCDC52', 'Pastillas de Freno', 'Pastillas de freno de alto rendimiento',EMPTY_BLOB(), 'Varios modelos')
+  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, ImagenRepuesto, CompatibilidadCarro)
+  VALUES (SYS_GUID(), 'F3A05BC5CF564A54818DE4FDDF8563AC', 'Batería de Coche', 'Batería de 12V para automóviles',EMPTY_BLOB(), 'Compatibilidad amplia')
+  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, ImagenRepuesto, CompatibilidadCarro)
+  VALUES (SYS_GUID(), '01B90BE3597E4F249BBAAFE9ACDBFB80', 'Amortiguador', 'Amortiguador para suspensión delantera', EMPTY_BLOB(),'Varios modelos')
+  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, ImagenRepuesto, CompatibilidadCarro)
+  VALUES (SYS_GUID(), '0B19CB1D04324264939B8390A15FC79D', 'Lámpara LED', 'Lámpara LED de alto brillo para faros', EMPTY_BLOB(),'Varios modelos')
 SELECT * FROM dual;
 
 INSERT ALL
