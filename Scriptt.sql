@@ -8,10 +8,18 @@ Telefono VARCHAR2(15) NOT NULL,
 Direccion VARCHAR2(100) NOT NULL
 );
 
+
 Create table Rol(
 UUID_rol VARCHAR2(50) primary key,
 Nombre VARCHAR2(20) NOT NULL
 );
+
+
+Create table CategoriaRepuesto(
+UUID_categoria VARCHAR2(50) primary key,
+Nombre VARCHAR2(25) NOT NULL
+);
+
 
 Create table Usuario(
 UUID_usuario VARCHAR2(50) PRIMARY KEY,
@@ -63,6 +71,21 @@ Nombre VARCHAR2(50) NOT NULL,
 ImagenProducto BLOB,
 CantidadDisponible NUMBER NOT NULL CHECK (CantidadDisponible > 0),
 Precio NUMBER(10, 2) NOT NULL CHECK (Precio > 0)
+);
+
+
+CREATE TABLE Repuesto (
+UUID_repuesto VARCHAR2(50) PRIMARY KEY,
+UUID_categoria VARCHAR2(50) NOT NULL,
+Nombre VARCHAR2(100) NOT NULL,
+Descripcion VARCHAR2(255),
+Precio NUMBER(10, 2) NOT NULL,
+Cantidad NUMBER NOT NULL,
+CompatibilidadCarro VARCHAR2(255),
+FechaIngreso DATE NOT NULL,
+proveedor VARCHAR2(100),
+
+CONSTRAINT fk_categoria_repuesto FOREIGN KEY (UUID_categoria) REFERENCES CategoriaRepuesto(UUID_categoria)
 );
 
 
@@ -189,6 +212,16 @@ CONSTRAINT fk_proveedor_producto FOREIGN KEY (Dui_proveedor) REFERENCES Proveedo
 );
 
 
+Create table Repuesto_Proveedor(
+UUID VARCHAR2(50) NOT NULL,
+UUID_repuesto VARCHAR2(50) NOT NULL,
+Dui_proveedor VARCHAR2(10) NOT NULL,
+
+CONSTRAINT fk_repuesto_proveedor FOREIGN KEY (UUID_repuesto) REFERENCES Producto(UUID_repuesto),
+CONSTRAINT fk_proveedor_producto FOREIGN KEY (Dui_proveedor) REFERENCES Proveedor(Dui_proveedor)
+);
+
+
 CREATE OR REPLACE TRIGGER Trig_validar_fecha_nacimiento
 BEFORE INSERT OR UPDATE ON Empleado
 FOR EACH ROW
@@ -266,11 +299,22 @@ BEGIN
 END;
 
 
+CREATE OR REPLACE TRIGGER trig_verificar_fecha_actual
+BEFORE INSERT OR UPDATE ON Repuesto
+FOR EACH ROW
+DECLARE
+    fecha_actual DATE;
+BEGIN
+    fecha_actual := TRUNC(SYSDATE);  
+    
+    IF :NEW.FechaIngreso <> fecha_actual THEN
+        RAISE_APPLICATION_ERROR(-20001, 'La fecha de ingreso debe ser la fecha actual.');
+    END IF;
+END;
 
 
 INSERT INTO Taller (Codigo_Taller, Nombre_Dueno, Apellido_Dueno, CorreoElectronico, Contrasena, Telefono, Direccion)
 VALUES ('TallerDisp', 'Fernando', 'Merino', 'fernando.merino@gmail.com', 'merino12', '23473411', 'Mexicanos Calle Sur');
-    
 
 
 INSERT ALL
@@ -382,7 +426,7 @@ INSERT ALL
     INTO Modelo (UUID_modelo, UUID_marca, Nombre) 
     VALUES (SYS_GUID(), 'AEB9978134214265AB13469A2837E875', 'Nuevo Taigun')
 SELECT * FROM dual;
-
+select * from modelo
 INSERT ALL
     INTO Empleado (Dui_empleado, UUID_usuario, Nombre, Apellido, ImagenEmpleado, FechaNacimiento, CorreoElectronico, Telefono)
     VALUES ('4386236-0', '31BF84383B7D4800ACAC0AEB9AD08DA7', 'Mario', 'Garcia', EMPTY_BLOB(), TO_DATE('2005-05-15', 'YYYY-MM-DD'), 'mario.garcia@gmail.com', '83462396')
