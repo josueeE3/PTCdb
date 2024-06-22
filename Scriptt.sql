@@ -8,7 +8,6 @@ Telefono VARCHAR2(15) NOT NULL,
 Direccion VARCHAR2(100) NOT NULL
 );
 
-
 Create table Rol(
 UUID_rol VARCHAR2(50) primary key,
 Nombre VARCHAR2(20) NOT NULL
@@ -79,11 +78,10 @@ UUID_repuesto VARCHAR2(50) PRIMARY KEY,
 UUID_categoria VARCHAR2(50) NOT NULL,
 Nombre VARCHAR2(100) NOT NULL,
 Descripcion VARCHAR2(255),
-Precio NUMBER(10, 2) NOT NULL,
-Cantidad NUMBER NOT NULL,
+Precio NUMBER(10, 2) NOT NULL CHECK (Precio > 0) ,
+Cantidad NUMBER NOT NULL CHECK (Cantidad > 0),
 CompatibilidadCarro VARCHAR2(255),
 FechaIngreso DATE NOT NULL,
-proveedor VARCHAR2(100),
 
 CONSTRAINT fk_categoria_repuesto FOREIGN KEY (UUID_categoria) REFERENCES CategoriaRepuesto(UUID_categoria)
 );
@@ -195,11 +193,23 @@ Create table DetalleProducto(
 UUID_DetalleProducto Varchar2(50) PRIMARY KEY,
 UUID_factura Varchar2(50) NOT NULL,
 UUID_producto Varchar2(50) NOT NULL,
-Cantidad NUMBER NOT NULL,
+Cantidad NUMBER CHECK (Cantidad > 0)NOT NULL,
 Total NUMBER (10,2) CHECK (Total > 0),
 
 CONSTRAINT fk_factura1 FOREIGN KEY (UUID_factura) REFERENCES Factura(UUID_factura),
 CONSTRAINT fk_producto1 FOREIGN KEY (UUID_producto) REFERENCES Producto(UUID_producto)
+); 
+
+
+Create table DetalleRepuesto(
+UUID_DetalleProducto Varchar2(50) PRIMARY KEY,
+UUID_factura Varchar2(50) NOT NULL,
+UUID_repuesto Varchar2(50) NOT NULL,
+Cantidad NUMBER NOT NULL,
+Total NUMBER (10,2) CHECK (Total > 0),
+
+CONSTRAINT fk_factura2 FOREIGN KEY (UUID_factura) REFERENCES Factura(UUID_factura),
+CONSTRAINT fk_repuesto1 FOREIGN KEY (UUID_repuesto) REFERENCES Repuesto(UUID_repuesto)
 ); 
 
 Create table Producto_Proveedor(
@@ -211,14 +221,13 @@ CONSTRAINT fk_producto_proveedor FOREIGN KEY (UUID_producto) REFERENCES Producto
 CONSTRAINT fk_proveedor_producto FOREIGN KEY (Dui_proveedor) REFERENCES Proveedor(Dui_proveedor)
 );
 
-
 Create table Repuesto_Proveedor(
 UUID VARCHAR2(50) NOT NULL,
 UUID_repuesto VARCHAR2(50) NOT NULL,
 Dui_proveedor VARCHAR2(10) NOT NULL,
 
-CONSTRAINT fk_repuesto_proveedor FOREIGN KEY (UUID_repuesto) REFERENCES Producto(UUID_repuesto),
-CONSTRAINT fk_proveedor_producto FOREIGN KEY (Dui_proveedor) REFERENCES Proveedor(Dui_proveedor)
+CONSTRAINT fk_repuesto_proveedor FOREIGN KEY (UUID_repuesto) REFERENCES Repuesto(UUID_repuesto),
+CONSTRAINT fk_proveedor_repuesto FOREIGN KEY (Dui_proveedor) REFERENCES Proveedor(Dui_proveedor)
 );
 
 
@@ -284,7 +293,6 @@ BEGIN
 END;
 
 
-
 CREATE OR REPLACE TRIGGER trig_validar_fecha_factura
 BEFORE INSERT OR UPDATE ON Factura
 FOR EACH ROW
@@ -322,19 +330,27 @@ INSERT ALL
     INTO Rol (UUID_rol, Nombre) VALUES (SYS_GUID(), 'Empleado')
 SELECT * FROM dual;
 
+
 INSERT ALL
-    INTO Usuario (UUID_usuario, UUID_rol, Nombre, Contrasena) 
-    VALUES (SYS_GUID(),'5EBF7037244E471AB635FCA1576C93F7', 'Mario', 'mario123')
-    INTO Usuario (UUID_usuario, UUID_rol, Nombre, Contrasena)
-    VALUES (SYS_GUID(), '5EBF7037244E471AB635FCA1576C93F7', 'Rebeca', 'rebe1234')
-    INTO Usuario (UUID_usuario, UUID_rol, Nombre, Contrasena) 
-    VALUES (SYS_GUID(), '454095925E644BB5A3E6AEC634820A5E', 'Fatima', 'fati1234')
-    INTO Usuario (UUID_usuario, UUID_rol, Nombre, Contrasena) 
-    VALUES (SYS_GUID(), '454095925E644BB5A3E6AEC634820A5E', 'Juan', 'juan1234')
-    INTO Usuario (UUID_usuario, UUID_rol, Nombre, Contrasena) 
-    VALUES (SYS_GUID(), '454095925E644BB5A3E6AEC634820A5E', 'Maria', 'maria123')
+  INTO CategoriaRepuesto (UUID_categoria, Nombre) VALUES (SYS_GUID(), 'Motor')
+  INTO CategoriaRepuesto (UUID_categoria, Nombre) VALUES (SYS_GUID(), 'Frenos')
+  INTO CategoriaRepuesto (UUID_categoria, Nombre) VALUES (SYS_GUID(), 'Transmisión')
+  INTO CategoriaRepuesto (UUID_categoria, Nombre) VALUES (SYS_GUID(), 'Suspensión')
+  INTO CategoriaRepuesto (UUID_categoria, Nombre) VALUES (SYS_GUID(), 'Eléctrico')
 SELECT * FROM dual;
 
+INSERT ALL
+    INTO Usuario (UUID_usuario, UUID_rol, Nombre, Contrasena) 
+    VALUES (SYS_GUID(),'06EE9319D9254329BBF44E6AFD2C3835', 'Mario', 'mario123')
+    INTO Usuario (UUID_usuario, UUID_rol, Nombre, Contrasena)
+    VALUES (SYS_GUID(), '06EE9319D9254329BBF44E6AFD2C3835', 'Rebeca', 'rebe1234')
+    INTO Usuario (UUID_usuario, UUID_rol, Nombre, Contrasena) 
+    VALUES (SYS_GUID(), 'DBC66462B1954E378D55E2CB2F4386F9', 'Fatima', 'fati1234')
+    INTO Usuario (UUID_usuario, UUID_rol, Nombre, Contrasena) 
+    VALUES (SYS_GUID(), 'DBC66462B1954E378D55E2CB2F4386F9', 'Juan', 'juan1234')
+    INTO Usuario (UUID_usuario, UUID_rol, Nombre, Contrasena) 
+    VALUES (SYS_GUID(), 'DBC66462B1954E378D55E2CB2F4386F9', 'Maria', 'maria123')
+SELECT * FROM dual;
 
 INSERT ALL
     INTO EstadoAsignarOrden (UUID_estado, Nombre)
@@ -414,6 +430,21 @@ INSERT ALL
     VALUES (SYS_GUID(), 'Neumático', EMPTY_BLOB(), 25, 59.99)
 SELECT * FROM dual;
 
+select * from CategoriaRepuesto;
+INSERT ALL
+  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, Precio, Cantidad, CompatibilidadCarro, FechaIngreso, Proveedor)
+  VALUES (SYS_GUID(), 'E8DC437C62E240249821749833135DF2', 'Filtro de Aceite', 'Filtro de aceite para motores estándar', 17.99, 10, 'Varios modelos', SYSDATE, 'Proveedor A')
+  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, Precio, Cantidad, CompatibilidadCarro, FechaIngreso, Proveedor)
+  VALUES (SYS_GUID(), '6711A11D76AB44DF8E59B0B75398A901', 'Pastillas de Freno', 'Pastillas de freno de alto rendimiento', 39.99, 20, 'Varios modelos', SYSDATE, 'Proveedor B')
+  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, Precio, Cantidad, CompatibilidadCarro, FechaIngreso, Proveedor)
+  VALUES (SYS_GUID(), '10FD4A0A0AC941099BF38772C048E07D', 'Batería de Coche', 'Batería de 12V para automóviles', 89.99, 30, 'Compatibilidad amplia', SYSDATE, 'Proveedor C')
+  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, Precio, Cantidad, CompatibilidadCarro, FechaIngreso, Proveedor)
+  VALUES (SYS_GUID(), '27988A1971F54E569B9DD4802228413C', 'Amortiguador', 'Amortiguador para suspensión delantera', 129.50, 20, 'Varios modelos', SYSDATE, 'Proveedor D')
+  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, Precio, Cantidad, CompatibilidadCarro, FechaIngreso, Proveedor)
+  VALUES (SYS_GUID(), '4B39FD643B4E4DFF8FCBF7BD58293E73', 'Lámpara LED', 'Lámpara LED de alto brillo para faros', 19.95, 20, 'Varios modelos', SYSDATE, 'Proveedor E')
+SELECT * FROM dual;
+
+
 INSERT ALL
     INTO Modelo (UUID_modelo, UUID_marca, Nombre) 
     VALUES (SYS_GUID(), '9371A4322C17459794A92DED7CEAF873', 'Sedán')
@@ -426,7 +457,8 @@ INSERT ALL
     INTO Modelo (UUID_modelo, UUID_marca, Nombre) 
     VALUES (SYS_GUID(), 'AEB9978134214265AB13469A2837E875', 'Nuevo Taigun')
 SELECT * FROM dual;
-select * from modelo
+
+
 INSERT ALL
     INTO Empleado (Dui_empleado, UUID_usuario, Nombre, Apellido, ImagenEmpleado, FechaNacimiento, CorreoElectronico, Telefono)
     VALUES ('4386236-0', '31BF84383B7D4800ACAC0AEB9AD08DA7', 'Mario', 'Garcia', EMPTY_BLOB(), TO_DATE('2005-05-15', 'YYYY-MM-DD'), 'mario.garcia@gmail.com', '83462396')
