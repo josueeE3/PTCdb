@@ -313,7 +313,7 @@ FOR EACH ROW
 DECLARE
     fecha_actual DATE;
 BEGIN
-    fecha_actual := TRUNC(SYSDATE);  
+    fecha_actual := SYSDATE;  
     
     IF :NEW.FechaIngreso <> fecha_actual THEN
         RAISE_APPLICATION_ERROR(-20001, 'La fecha de ingreso debe ser la fecha actual.');
@@ -338,18 +338,17 @@ INSERT ALL
   INTO CategoriaRepuesto (UUID_categoria, Nombre) VALUES (SYS_GUID(), 'Suspensión')
   INTO CategoriaRepuesto (UUID_categoria, Nombre) VALUES (SYS_GUID(), 'Eléctrico')
 SELECT * FROM dual;
-
 INSERT ALL
     INTO Usuario (UUID_usuario, UUID_rol, Nombre, Contrasena) 
-    VALUES (SYS_GUID(),'06EE9319D9254329BBF44E6AFD2C3835', 'Mario', 'mario123')
+    VALUES (SYS_GUID(),'BA661275AA5A48DBB713F4ADD3DCD6C0', 'Mario', 'mario123')
     INTO Usuario (UUID_usuario, UUID_rol, Nombre, Contrasena)
-    VALUES (SYS_GUID(), '06EE9319D9254329BBF44E6AFD2C3835', 'Rebeca', 'rebe1234')
+    VALUES (SYS_GUID(), 'BA661275AA5A48DBB713F4ADD3DCD6C0', 'Rebeca', 'rebe1234')
     INTO Usuario (UUID_usuario, UUID_rol, Nombre, Contrasena) 
-    VALUES (SYS_GUID(), 'DBC66462B1954E378D55E2CB2F4386F9', 'Fatima', 'fati1234')
+    VALUES (SYS_GUID(), 'F1BB4874EFF2489BB7DA0A32FF0DDE51', 'Fatima', 'fati1234')
     INTO Usuario (UUID_usuario, UUID_rol, Nombre, Contrasena) 
-    VALUES (SYS_GUID(), 'DBC66462B1954E378D55E2CB2F4386F9', 'Juan', 'juan1234')
+    VALUES (SYS_GUID(), 'F1BB4874EFF2489BB7DA0A32FF0DDE51', 'Juan', 'juan1234')
     INTO Usuario (UUID_usuario, UUID_rol, Nombre, Contrasena) 
-    VALUES (SYS_GUID(), 'DBC66462B1954E378D55E2CB2F4386F9', 'Maria', 'maria123')
+    VALUES (SYS_GUID(), 'F1BB4874EFF2489BB7DA0A32FF0DDE51', 'Maria', 'maria123')
 SELECT * FROM dual;
 
 INSERT ALL
@@ -430,60 +429,60 @@ INSERT ALL
     VALUES (SYS_GUID(), 'Neumático', EMPTY_BLOB(), 25, 59.99)
 SELECT * FROM dual;
 
-select * from CategoriaRepuesto;
 INSERT ALL
-  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, Precio, Cantidad, CompatibilidadCarro, FechaIngreso, Proveedor)
-  VALUES (SYS_GUID(), 'E8DC437C62E240249821749833135DF2', 'Filtro de Aceite', 'Filtro de aceite para motores estándar', 17.99, 10, 'Varios modelos', SYSDATE, 'Proveedor A')
-  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, Precio, Cantidad, CompatibilidadCarro, FechaIngreso, Proveedor)
-  VALUES (SYS_GUID(), '6711A11D76AB44DF8E59B0B75398A901', 'Pastillas de Freno', 'Pastillas de freno de alto rendimiento', 39.99, 20, 'Varios modelos', SYSDATE, 'Proveedor B')
-  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, Precio, Cantidad, CompatibilidadCarro, FechaIngreso, Proveedor)
-  VALUES (SYS_GUID(), '10FD4A0A0AC941099BF38772C048E07D', 'Batería de Coche', 'Batería de 12V para automóviles', 89.99, 30, 'Compatibilidad amplia', SYSDATE, 'Proveedor C')
-  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, Precio, Cantidad, CompatibilidadCarro, FechaIngreso, Proveedor)
-  VALUES (SYS_GUID(), '27988A1971F54E569B9DD4802228413C', 'Amortiguador', 'Amortiguador para suspensión delantera', 129.50, 20, 'Varios modelos', SYSDATE, 'Proveedor D')
-  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, Precio, Cantidad, CompatibilidadCarro, FechaIngreso, Proveedor)
-  VALUES (SYS_GUID(), '4B39FD643B4E4DFF8FCBF7BD58293E73', 'Lámpara LED', 'Lámpara LED de alto brillo para faros', 19.95, 20, 'Varios modelos', SYSDATE, 'Proveedor E')
+  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, Precio, Cantidad, CompatibilidadCarro, FechaIngreso)
+  VALUES (SYS_GUID(), 'F5C5FE343B784909BE3D14A6E455E054', 'Filtro de Aceite', 'Filtro de aceite para motores estándar', 17.99, 10, 'Varios modelos', SYSDATE)
+  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, Precio, Cantidad, CompatibilidadCarro, FechaIngreso)
+  VALUES (SYS_GUID(), 'A640FE058D044BAA85CCE93BBBFCDC52', 'Pastillas de Freno', 'Pastillas de freno de alto rendimiento', 39.99, 20, 'Varios modelos', SYSDATE)
+  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, Precio, Cantidad, CompatibilidadCarro, FechaIngreso)
+  VALUES (SYS_GUID(), 'F3A05BC5CF564A54818DE4FDDF8563AC', 'Batería de Coche', 'Batería de 12V para automóviles', 89.99, 30, 'Compatibilidad amplia', SYSDATE)
+  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, Precio, Cantidad, CompatibilidadCarro, FechaIngreso)
+  VALUES (SYS_GUID(), '01B90BE3597E4F249BBAAFE9ACDBFB80', 'Amortiguador', 'Amortiguador para suspensión delantera', 129.50, 20, 'Varios modelos', SYSDATE)
+  INTO Repuesto (UUID_repuesto, UUID_categoria, Nombre, Descripcion, Precio, Cantidad, CompatibilidadCarro, FechaIngreso)
+  VALUES (SYS_GUID(), '0B19CB1D04324264939B8390A15FC79D', 'Lámpara LED', 'Lámpara LED de alto brillo para faros', 19.95, 20, 'Varios modelos', SYSDATE)
+SELECT * FROM dual;
+
+INSERT ALL
+    INTO Modelo (UUID_modelo, UUID_marca, Nombre) 
+    VALUES (SYS_GUID(), '0A95783196C64FE7AB662DBD8B58F1C1', 'Sedán')
+    INTO Modelo (UUID_modelo, UUID_marca, Nombre) 
+    VALUES (SYS_GUID(), '0A846F6EA48B4D68A49022BF7AACB948', 'CR-V Hybrid')
+    INTO Modelo (UUID_modelo, UUID_marca, Nombre) 
+    VALUES (SYS_GUID(), '2A01F2F92CC340EDB91DC1107B9FA825', 'EDGE ST')
+    INTO Modelo (UUID_modelo, UUID_marca, Nombre) 
+    VALUES (SYS_GUID(), '26C32CCE329A407FB7CF1EC51E9C1591', 'Montana')
+    INTO Modelo (UUID_modelo, UUID_marca, Nombre) 
+    VALUES (SYS_GUID(), '0991514DB30A4CC6B460BB57B8895316', 'Nuevo Taigun')
 SELECT * FROM dual;
 
 
 INSERT ALL
-    INTO Modelo (UUID_modelo, UUID_marca, Nombre) 
-    VALUES (SYS_GUID(), '9371A4322C17459794A92DED7CEAF873', 'Sedán')
-    INTO Modelo (UUID_modelo, UUID_marca, Nombre) 
-    VALUES (SYS_GUID(), 'A5F21417E1E148C4BDDE883CAC42C5D4', 'CR-V Hybrid')
-    INTO Modelo (UUID_modelo, UUID_marca, Nombre) 
-    VALUES (SYS_GUID(), '300BA66469C746DB972E6BF6E6CBF0D4', 'EDGE ST')
-    INTO Modelo (UUID_modelo, UUID_marca, Nombre) 
-    VALUES (SYS_GUID(), '9FADED1CBBAA45F6BD28E8136AFC77E5', 'Montana')
-    INTO Modelo (UUID_modelo, UUID_marca, Nombre) 
-    VALUES (SYS_GUID(), 'AEB9978134214265AB13469A2837E875', 'Nuevo Taigun')
+    INTO Empleado (Dui_empleado, UUID_usuario, Nombre, Apellido, ImagenEmpleado, FechaNacimiento, CorreoElectronico, Telefono)
+    VALUES ('4386236-0', 'D85505BD87E343968F1858A3F8D01444', 'Mario', 'Garcia', EMPTY_BLOB(), TO_DATE('2005-05-15', 'YYYY-MM-DD'), 'mario.garcia@gmail.com', '83462396')
+    INTO Empleado (Dui_empleado, UUID_usuario, Nombre, Apellido, ImagenEmpleado, FechaNacimiento, CorreoElectronico, Telefono)
+    VALUES ('23473414-1', '3466DA0110A74E32B7D4CC77EB5B6A1B', 'Rebeca', 'Zelaya', EMPTY_BLOB(), TO_DATE('1985-08-20', 'YYYY-MM-DD'), 'rebeca.zelaya@gmail.com', '28976122')
+    INTO Empleado (Dui_empleado, UUID_usuario, Nombre, Apellido, ImagenEmpleado, FechaNacimiento, CorreoElectronico, Telefono)
+    VALUES ('52722346-2', '2AEFF25B7A3C42DA9430A5FFEDBAEF08', 'Fatima', 'Juarez', EMPTY_BLOB(), TO_DATE('1992-03-10', 'YYYY-MM-DD'), 'fatima.juarez@gmail.com', '09348267')
+    INTO Empleado (Dui_empleado, UUID_usuario, Nombre, Apellido, ImagenEmpleado, FechaNacimiento, CorreoElectronico, Telefono)
+    VALUES ('34583434-3', '8F38DDD5526542D2B194FEBAB2611EBE', 'Juan', 'Lopez', EMPTY_BLOB(), TO_DATE('1988-11-25', 'YYYY-MM-DD'), 'juan.lopez@gmail.com', '90283167')
+    INTO Empleado (Dui_empleado, UUID_usuario, Nombre, Apellido, ImagenEmpleado, FechaNacimiento, CorreoElectronico, Telefono)
+    VALUES ('53423346-4', '4A939E24836D42978ADA08D972A2B027', 'Maria', 'Dominguez', EMPTY_BLOB(), TO_DATE('1995-07-03', 'YYYY-MM-DD'), 'maria.dominguez@gmail.com', '29086126')
 SELECT * FROM dual;
 
 
 INSERT ALL
-    INTO Empleado (Dui_empleado, UUID_usuario, Nombre, Apellido, ImagenEmpleado, FechaNacimiento, CorreoElectronico, Telefono)
-    VALUES ('4386236-0', '31BF84383B7D4800ACAC0AEB9AD08DA7', 'Mario', 'Garcia', EMPTY_BLOB(), TO_DATE('2005-05-15', 'YYYY-MM-DD'), 'mario.garcia@gmail.com', '83462396')
-    INTO Empleado (Dui_empleado, UUID_usuario, Nombre, Apellido, ImagenEmpleado, FechaNacimiento, CorreoElectronico, Telefono)
-    VALUES ('23473414-1', '51345661202548BEBDFD39DC688A9211', 'Rebeca', 'Zelaya', EMPTY_BLOB(), TO_DATE('1985-08-20', 'YYYY-MM-DD'), 'rebeca.zelaya@gmail.com', '28976122')
-    INTO Empleado (Dui_empleado, UUID_usuario, Nombre, Apellido, ImagenEmpleado, FechaNacimiento, CorreoElectronico, Telefono)
-    VALUES ('52722346-2', 'F23287D8C4CB428FA23F5C2016326777', 'Fatima', 'Juarez', EMPTY_BLOB(), TO_DATE('1992-03-10', 'YYYY-MM-DD'), 'fatima.juarez@gmail.com', '09348267')
-    INTO Empleado (Dui_empleado, UUID_usuario, Nombre, Apellido, ImagenEmpleado, FechaNacimiento, CorreoElectronico, Telefono)
-    VALUES ('34583434-3', 'EAA844A5F7934266B8D47DAFE1319D2E', 'Juan', 'Lopez', EMPTY_BLOB(), TO_DATE('1988-11-25', 'YYYY-MM-DD'), 'juan.lopez@gmail.com', '90283167')
-    INTO Empleado (Dui_empleado, UUID_usuario, Nombre, Apellido, ImagenEmpleado, FechaNacimiento, CorreoElectronico, Telefono)
-    VALUES ('53423346-4', '3334798C2C7A40A1BDF382F4539DAABE', 'Maria', 'Dominguez', EMPTY_BLOB(), TO_DATE('1995-07-03', 'YYYY-MM-DD'), 'maria.dominguez@gmail.com', '29086126')
+    INTO Carro (Placa_carro, Dui_cliente, UUID_modelo, Color, Año, ImagenCarro, FechaRegistro, Descripcion)
+    VALUES ('ABC1234', '34572369-9', '0C2C775A94F34BFD84FF3327223B509C', 'Gris', '2020', EMPTY_BLOB(), SYSDATE, 'Carro deportivo')
+    INTO Carro (Placa_carro, Dui_cliente, UUID_modelo, Color, Año, ImagenCarro, FechaRegistro, Descripcion)
+    VALUES ('XYZ5678', '09134582-1', '7F248412C5B444BF9E269CED62876201', 'Negro', '2019', EMPTY_BLOB(), SYSDATE, 'Carro familiar')
+    INTO Carro (Placa_carro, Dui_cliente, UUID_modelo, Color, Año, ImagenCarro, FechaRegistro, Descripcion)
+    VALUES ('DEF9012', '45678901-2', 'A51030DEA8FA437AB6DE2757F7098FF1', 'Blanco', '2021', EMPTY_BLOB(), SYSDATE, 'Carro urbano')
+    INTO Carro (Placa_carro, Dui_cliente, UUID_modelo, Color, Año, ImagenCarro, FechaRegistro, Descripcion)
+    VALUES ('GHI3456', '21895798-7', '661218BDCB2E419F9BCB2B5A6980FD9E', 'Azul', '2017', EMPTY_BLOB(), SYSDATE, 'Carro SUV')
+    INTO Carro (Placa_carro, Dui_cliente, UUID_modelo, Color, Año, ImagenCarro, FechaRegistro, Descripcion)
+    VALUES ('JKL7890', '09243865-3', '5980B476DF3446A5953AE825A8F65D85', 'Rojo', '2020', EMPTY_BLOB(), SYSDATE, 'Carro eléctrico')
 SELECT * FROM dual;
 
-INSERT ALL
-    INTO Carro (Placa_carro, Dui_cliente, UUID_modelo, Color, Año, ImagenCarro, FechaRegistro, Descripcion)
-    VALUES ('ABC1234', '34572369-9', 'CDE9B87F74CD4F589714D55A6EFFB622', 'Gris', '2020', EMPTY_BLOB(), SYSDATE, 'Carro deportivo')
-    INTO Carro (Placa_carro, Dui_cliente, UUID_modelo, Color, Año, ImagenCarro, FechaRegistro, Descripcion)
-    VALUES ('XYZ5678', '09134582-1', '3C6FFD175E3A49E89C5257E1753D6EEA', 'Negro', '2019', EMPTY_BLOB(), SYSDATE, 'Carro familiar')
-    INTO Carro (Placa_carro, Dui_cliente, UUID_modelo, Color, Año, ImagenCarro, FechaRegistro, Descripcion)
-    VALUES ('DEF9012', '45678901-2', '33E26076129344D8A288A72688907CFE', 'Blanco', '2021', EMPTY_BLOB(), SYSDATE, 'Carro urbano')
-    INTO Carro (Placa_carro, Dui_cliente, UUID_modelo, Color, Año, ImagenCarro, FechaRegistro, Descripcion)
-    VALUES ('GHI3456', '21895798-7', 'D4F59522D63B497D945C37B57B7037E9', 'Azul', '2017', EMPTY_BLOB(), SYSDATE, 'Carro SUV')
-    INTO Carro (Placa_carro, Dui_cliente, UUID_modelo, Color, Año, ImagenCarro, FechaRegistro, Descripcion)
-    VALUES ('JKL7890', '09243865-3', 'B89D4CC811174F8D8DD038D484212C66', 'Rojo', '2020', EMPTY_BLOB(), SYSDATE, 'Carro eléctrico')
-SELECT * FROM dual;
 
 INSERT ALL
   INTO HistorialCarro (UUID_historialCarro, Placa_carro, Descripcion)
@@ -499,21 +498,23 @@ INSERT ALL
 SELECT * FROM dual;
 
 
+select * from Servicio;
+select * from eSTADoAsignarOrden;
 
 insert into AsignarOrden(UUID_AsignarOrden, Placa_carro, Dui_empleado, UUID_servicio, UUID_estado, FechaAsignacion, FechaFinalizacion, Descripcion)
 values
-(SYS_GUID(), 'ABC1234', '4386236-0', '2CA40AF7FC8D4839AEC1709C52136C20', '707B61092CE94BA7B5631057B2868700', TO_DATE('2024-06-21', 'YYYY-MM-DD'), 
-TO_DATE('2024-06-23', 'YYYY-MM-DD'), 'Orden de mantenimiento preventivo');
+(SYS_GUID(), 'ABC1234', '4386236-0', 'CB3D9FD98F244D03982E9961E416B74C', '7CABFFC6B78E44B286E78EE76915ED08', TO_DATE('2024-06-22', 'YYYY-MM-DD'), 
+TO_DATE('2024-06-24', 'YYYY-MM-DD'), 'Orden de mantenimiento preventivo');
 
 INSERT ALL
   INTO AsignarOrden (UUID_AsignarOrden, Placa_carro, Dui_empleado, UUID_servicio, UUID_estado, FechaAsignacion, FechaFinalizacion, Descripcion)
-  VALUES (SYS_GUID(), 'XYZ5678','23473414-1', '7D019742EAB04D7092287EE7262BDD7E','B375224C1D564E119BE99C19E52E40F6', SYSDATE, SYSDATE + INTERVAL '2' DAY, 'Cambio de aceite')
+  VALUES (SYS_GUID(), 'XYZ5678','23473414-1', 'D9C7ECD645FF4F79B04758D362E9990A','7CABFFC6B78E44B286E78EE76915ED08', SYSDATE, SYSDATE + INTERVAL '2' DAY, 'Cambio de aceite')
   INTO AsignarOrden (UUID_AsignarOrden, Placa_carro, Dui_empleado, UUID_servicio, UUID_estado, FechaAsignacion, FechaFinalizacion, Descripcion)
-  VALUES (SYS_GUID(), 'DEF9012', '52722346-2', 'A6A9F27D28C541B1B5DC3C4CE7DB4666','B375224C1D564E119BE99C19E52E40F6', SYSDATE, SYSDATE + INTERVAL '2' DAY, 'Alineación y balanceo')
+  VALUES (SYS_GUID(), 'DEF9012', '52722346-2', '3F021301A94C42A8B7D9CC9784578AF0','816F4030D3B24751B34F12229C979BC8', SYSDATE, SYSDATE + INTERVAL '2' DAY, 'Alineación y balanceo')
   INTO AsignarOrden (UUID_AsignarOrden, Placa_carro, Dui_empleado, UUID_servicio, UUID_estado, FechaAsignacion, FechaFinalizacion, Descripcion)
-  VALUES (SYS_GUID(), 'GHI3456', '34583434-3', '9AE58FA41EC846888D5C4E3BFFD56182','C413443CA52D4DD7B6905DF065FDEC4A' ,SYSDATE, SYSDATE + INTERVAL '3' DAY, 'Reparación de frenos')
+  VALUES (SYS_GUID(), 'GHI3456', '34583434-3', '458CFE3F7C3541198ED4B94C92696FF5','816F4030D3B24751B34F12229C979BC8' ,SYSDATE, SYSDATE + INTERVAL '3' DAY, 'Reparación de frenos')
   INTO AsignarOrden (UUID_AsignarOrden, Placa_carro, Dui_empleado, UUID_servicio, UUID_estado, FechaAsignacion, FechaFinalizacion, Descripcion)
-  VALUES (SYS_GUID(), 'JKL7890', '53423346-4', '389AF39CEB12439FB81E7E208E6DEC90','707B61092CE94BA7B5631057B2868700',SYSDATE, SYSDATE + INTERVAL '4' DAY, 'Cambio de llantas')
+  VALUES (SYS_GUID(), 'JKL7890', '53423346-4', 'C1306D37D98B4E198202A390D396C507','6A587D3F4D9646CB88EF6E8FAEF1D5F4',SYSDATE, SYSDATE + INTERVAL '4' DAY, 'Cambio de llantas')
 SELECT * FROM dual;
 
 
@@ -521,7 +522,7 @@ INSERT ALL
   INTO Cita (UUID_cita, Fecha_cita, Descripcion)
   VALUES (SYS_GUID(), SYSDATE, 'Primera cita del taller')
   INTO Cita (UUID_cita, Fecha_cita, Descripcion)
-  VALUES (SYS_GUID(), TO_DATE('2024-06-21', 'YYYY-MM-DD'), 'Segunda cita del taller')
+  VALUES (SYS_GUID(), TO_DATE('2024-06-22', 'YYYY-MM-DD'), 'Segunda cita del taller')
   INTO Cita (UUID_cita, Fecha_cita, Descripcion)
   VALUES (SYS_GUID(), SYSDATE, 'Tercera cita del taller')
   INTO Cita (UUID_cita, Fecha_cita, Descripcion)
@@ -530,19 +531,19 @@ INSERT ALL
   VALUES (SYS_GUID(), SYSDATE, 'Quinta cita del taller')
 SELECT * FROM dual;
 
-
 INSERT ALL
   INTO DetalleCita (UUID_DetalleCita, UUID_cita, Dui_cliente, Dui_empleado, Descripcion)
-  VALUES (SYS_GUID(), 'BA52B7377184430A991F6106965761B0', '34572369-9', '4386236-0', 'El cliente nos expueso los cambios que se le harian a su carro')
+  VALUES (SYS_GUID(), '3A2933C6534D4B75AED165F040D97059', '34572369-9', '4386236-0', 'El cliente nos expueso los cambios que se le harian a su carro')
   INTO DetalleCita (UUID_DetalleCita, UUID_cita, Dui_cliente, Dui_empleado, Descripcion)
-  VALUES (SYS_GUID(), 'FD6FD08E50DA40A08CEE3E9520FF23A8', '09134582-1', '23473414-1', 'El cliente nos expueso los cambios que se le harian a su camioneta')
+  VALUES (SYS_GUID(), '2E179915177E4DFD82424EC52AC1EACD', '09134582-1', '23473414-1', 'El cliente nos expueso los cambios que se le harian a su camioneta')
   INTO DetalleCita (UUID_DetalleCita, UUID_cita, Dui_cliente, Dui_empleado, Descripcion)
-  VALUES (SYS_GUID(), '7441E5236CCC412EADDFD4F150B7B60B', '45678901-2', '52722346-2', 'El cliente nos expueso los cambios que se le harian a su microbus')
+  VALUES (SYS_GUID(), '364D29CF58A0496CA788CC396DE62D5D', '45678901-2', '52722346-2', 'El cliente nos expueso los cambios que se le harian a su microbus')
   INTO DetalleCita (UUID_DetalleCita, UUID_cita, Dui_cliente, Dui_empleado, Descripcion)
-  VALUES (SYS_GUID(), 'E81CFD7727074BDD9E6D691D2D9BEFA9', '21895798-7', '34583434-3', 'El cliente nos expueso los cambios que se le harian a su carro')
+  VALUES (SYS_GUID(), '7864A7197D29444C9FE66E69634DF78E', '21895798-7', '34583434-3', 'El cliente nos expueso los cambios que se le harian a su carro')
   INTO DetalleCita (UUID_DetalleCita, UUID_cita, Dui_cliente, Dui_empleado, Descripcion)
-  VALUES (SYS_GUID(), '418A49FB882142EAA69C9A99972F41E5', '09243865-3', '53423346-4', 'El cliente nos expueso los cambios que se le harian a su camioneta')
+  VALUES (SYS_GUID(), 'C5F2907918D6406187B26FE3E63A156F', '09243865-3', '53423346-4', 'El cliente nos expueso los cambios que se le harian a su camioneta')
 SELECT * FROM dual;
+
 
 
 INSERT ALL
@@ -587,3 +588,35 @@ INSERT ALL
 SELECT * FROM dual;
 
 
+
+select * from AsignarOrden;
+
+SELECT AsignarOrden.Placa_carro AS "Placa de carro", Empleado.Nombre AS "Carro asignado a:",  Servicio.Nombre AS "Servicio a realizar", 
+EstadoAsignarOrden.Nombre AS "Estado de la tarea", AsignarOrden.FechaAsignacion AS "Fecha de Asignacion", AsignarOrden.FechaFinalizacion AS "Fecha de Finalizacion", 
+AsignarOrden.Descripcion 
+FROM AsignarOrden
+INNER JOIN Empleado
+ON AsignarOrden.Dui_empleado = Empleado.Dui_empleado
+INNER JOIN Servicio
+ON AsignarOrden.UUID_servicio = Servicio.UUID_servicio
+INNER JOIN EstadoAsignarOrden 
+ON AsignarOrden.UUID_estado = EstadoAsignarOrden.UUID_estado;
+
+
+SELECT Carro.Placa_Carro AS "Placa de carro", Modelo.Nombre AS Modelo
+FROM Carro
+INNER JOIN Modelo
+ON Carro.UUID_Modelo = Modelo.UUID_Modelo;
+
+
+SELECT Carro.Placa_Carro AS "Placa de carro", Cliente.Nombre AS "Dueño"
+FROM Carro
+INNER JOIN Cliente
+ON Carro.Dui_Cliente = Cliente.Dui_Cliente;
+
+SELECT Carro.Placa_Carro, Cliente.Nombre AS Dueño, Modelo.Nombre AS Modelo, Color, Año, ImagenCarro, FechaRegistro, Descripcion
+FROM Carro
+INNER JOIN Cliente
+ON Carro.Dui_Cliente = Cliente.Dui_Cliente
+INNER JOIN Modelo
+ON Carro.UUID_Modelo = Modelo.UUID_Modelo;
