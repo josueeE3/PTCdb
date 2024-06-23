@@ -213,7 +213,7 @@ UUID VARCHAR2(50) NOT NULL,
 UUID_producto VARCHAR2(50) NOT NULL,
 Dui_proveedor VARCHAR2(10) NOT NULL,
 Precio NUMBER(10, 2) NOT NULL CHECK (Precio > 0),
-Cantidad NUMBER(10, 2) NOT NULL CHECK (Precio > 0) ,
+Cantidad NUMBER(10, 2) NOT NULL CHECK (Cantidad > 0) ,
 FechaSuministro DATE NOT NULL,
 
 CONSTRAINT fk_producto_proveedor FOREIGN KEY (UUID_producto) REFERENCES Producto(UUID_producto),
@@ -225,7 +225,7 @@ UUID VARCHAR2(50) NOT NULL,
 UUID_repuesto VARCHAR2(50) NOT NULL,
 Dui_proveedor VARCHAR2(10) NOT NULL,
 Precio NUMBER(10, 2) NOT NULL CHECK (Precio > 0),
-Cantidad NUMBER(10, 2) NOT NULL CHECK (Precio > 0) ,
+Cantidad NUMBER(10, 2) NOT NULL CHECK (Cantidad > 0) ,
 FechaSuministro DATE NOT NULL,
 
 CONSTRAINT fk_repuesto_proveedor FOREIGN KEY (UUID_repuesto) REFERENCES Repuesto(UUID_repuesto),
@@ -636,3 +636,4 @@ INNER JOIN Cliente
 ON Carro.Dui_Cliente = Cliente.Dui_Cliente
 INNER JOIN Modelo
 ON Carro.UUID_Modelo = Modelo.UUID_Modelo;
+
