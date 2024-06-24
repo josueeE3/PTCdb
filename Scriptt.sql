@@ -36,10 +36,13 @@ Nombre VARCHAR2(20) NOT NULL
 
 Create table Cliente (
 Dui_cliente VARCHAR2(10) PRIMARY KEY,
+UUID_usuario VARCHAR2(50) NOT NULL,
 Nombre VARCHAR2(50) NOT NULL,
 Apellido VARCHAR2(50) NOT NULL,
 Correo_Electronico VARCHAR2(50) UNIQUE,
-Telefono VARCHAR2(8) NOT NULL
+Telefono VARCHAR2(8) NOT NULL,
+
+CONSTRAINT fk_usuario_cliente FOREIGN KEY (UUID_usuario) REFERENCES Usuario(UUID_usuario)
 );
 
 Create table Marca(
@@ -343,6 +346,8 @@ VALUES ('TallerDisp', 'Fernando', 'Merino', 'fernando.merino@gmail.com', 'merino
 INSERT ALL
     INTO Rol (UUID_rol, Nombre) VALUES (SYS_GUID(), 'Administrador')
     INTO Rol (UUID_rol, Nombre) VALUES (SYS_GUID(), 'Empleado')
+    INTO Rol (UUID_rol, Nombre) VALUES (SYS_GUID(), 'Cliente')
+
 SELECT * FROM dual;
 
 
@@ -377,17 +382,18 @@ INSERT ALL
     VALUES (SYS_GUID(), 'Terminado')
 SELECT * FROM dual;
 
+
 INSERT ALL
-    INTO Cliente (Dui_cliente, Nombre, Apellido, Correo_Electronico, Telefono) 
-    VALUES ('34572369-9', 'Carlos', 'Goncho', 'goncho@gmail.com', '34598115')
-    INTO Cliente (Dui_cliente, Nombre, Apellido, Correo_Electronico, Telefono) 
-    VALUES ('09134582-1', 'Lautaro', 'Martin', 'martin@gmail.com', '12056923')
-    INTO Cliente (Dui_cliente, Nombre, Apellido, Correo_Electronico, Telefono) 
-    VALUES ('45678901-2', 'Lionel', 'Messi', 'messi@gmail.com', '10493682')
-    INTO Cliente (Dui_cliente, Nombre, Apellido, Correo_Electronico, Telefono) 
-    VALUES ('21895798-7', 'Paulo', 'Dybala', 'dybala@gmail.com', '23489679')
-    INTO Cliente (Dui_cliente, Nombre, Apellido, Correo_Electronico, Telefono) 
-    VALUES ('09243865-3', 'Luis', 'De la Fuente', 'luis@gmail.com', '93082462')
+    INTO Cliente (Dui_cliente, UUID_usuario, Nombre, Apellido, Correo_Electronico, Telefono) 
+    VALUES ('34572369-9', 'D85505BD87E343968F1858A3F8D01444' , 'Carlos', 'Goncho', 'goncho@gmail.com', '34598115')
+    INTO Cliente (Dui_cliente, UUID_usuario, Nombre, Apellido, Correo_Electronico, Telefono) 
+    VALUES ('09134582-1', '3466DA0110A74E32B7D4CC77EB5B6A1B' ,'Lautaro', 'Martin', 'martin@gmail.com', '12056923')
+    INTO Cliente (Dui_cliente, UUID_usuario, Nombre, Apellido, Correo_Electronico, Telefono) 
+    VALUES ('45678901-2', '2AEFF25B7A3C42DA9430A5FFEDBAEF08' ,'Lionel', 'Messi', 'messi@gmail.com', '10493682')
+    INTO Cliente (Dui_cliente, UUID_usuario, Nombre, Apellido, Correo_Electronico, Telefono) 
+    VALUES ('21895798-7', '2AEFF25B7A3C42DA9430A5FFEDBAEF08' ,'Paulo', 'Dybala', 'dybala@gmail.com', '23489679')
+    INTO Cliente (Dui_cliente, UUID_usuario, Nombre, Apellido, Correo_Electronico, Telefono) 
+    VALUES ('09243865-3', '4A939E24836D42978ADA08D972A2B027' ,'Luis', 'De la Fuente', 'luis@gmail.com', '93082462')
 SELECT * FROM dual;
 
 
@@ -561,7 +567,7 @@ INSERT ALL
 SELECT * FROM dual;
 
 
-
+select * from factura
 INSERT ALL
   INTO Factura (UUID_factura, Dui_cliente, Dui_empleado, FechaEmision, FechaVencimiento)
   VALUES (SYS_GUID(), '34572369-9', '4386236-0', SYSDATE, SYSDATE + INTERVAL '5' DAY)
@@ -576,6 +582,7 @@ INSERT ALL
 SELECT * FROM dual;
 
 
+select * from Factura
 INSERT ALL
   INTO DetalleServicio (UUID_DetalleServicio, UUID_factura, UUID_servicio, Total)
   VALUES (SYS_GUID(), 'F2A52E4EB421410EA37584FEB2480B4B', '2CA40AF7FC8D4839AEC1709C52136C20', 150.00)
