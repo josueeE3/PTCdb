@@ -1,0 +1,282 @@
+Create table Taller(
+Codigo_Taller VARCHAR2(10) primary key,
+Nombre_Dueno VARCHAR2(50) NOT NULL,
+Apellido_Dueno VARCHAR2(50) NOT NULL,
+CorreoElectronico VARCHAR2(50) UNIQUE,
+Contrasena VARCHAR2(8) NOT NULL,
+Telefono VARCHAR2(15) NOT NULL,
+Direccion VARCHAR2(100) NOT NULL
+);
+
+Create table Rol(
+UUID_rol VARCHAR2(50) primary key,
+Nombre VARCHAR2(20) NOT NULL
+);
+
+
+Create table Usuario(
+UUID_usuario VARCHAR2(50) PRIMARY KEY,
+UUID_rol VARCHAR2(50) NOT NULL,
+Nombre VARCHAR2(50) NOT NULL,
+Contrasena VARCHAR2(8) NOT NULL,
+
+CONSTRAINT fk_rol FOREIGN KEY (UUID_rol) REFERENCES Rol(UUID_rol)
+);
+
+Create table EstadoAsignarOrden(
+UUID_estado Varchar2(50) PRIMARY KEY,
+Nombre VARCHAR2(20) NOT NULL
+);
+
+Create table Cliente (
+Dui_cliente VARCHAR2(10) PRIMARY KEY,
+UUID_usuario VARCHAR2(50) NOT NULL,
+Nombre VARCHAR2(50) NOT NULL,
+Apellido VARCHAR2(50) NOT NULL,
+Correo_Electronico VARCHAR2(50) UNIQUE,
+Telefono VARCHAR2(8) NOT NULL,
+
+CONSTRAINT fk_usuario_cliente FOREIGN KEY (UUID_usuario) REFERENCES Usuario(UUID_usuario)
+);
+
+Create table Marca(
+UUID_marca VARCHAR2(50) PRIMARY KEY,
+Nombre VARCHAR2(50) NOT NULL,
+Descripcion VARCHAR2(200) NOT NULL
+);
+
+Create table Proveedor(
+Dui_proveedor VARCHAR2(10) PRIMARY KEY,
+Nombre VARCHAR2(50) NOT NULL,
+Apellido VARCHAR2(50) NOT NULL,
+Telefono VARCHAR2(9) NOT NULL,
+Correo_Electronico VARCHAR2(50) UNIQUE,
+Direccion VARCHAR2(200) NOT NULL
+);
+
+Create table Servicio(
+UUID_servicio VARCHAR2(50) PRIMARY KEY,
+Nombre VARCHAR2(50) NOT NULL,
+Descripcion VARCHAR2(50) NOT NULL,
+Precio NUMBER(10, 2) CHECK (Precio > 0) NOT NULL
+);
+
+
+Create table ProductoRepuesto(
+UUID_productoRepuesto VARCHAR2(50) PRIMARY KEY,
+Nombre VARCHAR2(50) NOT NULL,
+ImagenProdcutoRepuesto BLOB,
+Descripcion VARCHAR2(255)
+);
+
+
+Create table Modelo(
+UUID_modelo VARCHAR2(50)PRIMARY KEY,
+UUID_marca VARCHAR2(50) NOT NULL,
+Nombre VARCHAR2(20) NOT NULL,
+
+CONSTRAINT fk_marca FOREIGN KEY (UUID_marca) REFERENCES Marca(UUID_marca)
+);
+
+
+Create table Empleado(
+Dui_empleado VARCHAR2(10) PRIMARY KEY,
+UUID_usuario VARCHAR2(50) NOT NULL,
+Nombre VARCHAR2(100) NOT NULL,
+Apellido VARCHAR2(100) NOT NULL,
+ImagenEmpleado BLOB,
+FechaNacimiento DATE NOT NULL,
+CorreoElectronico VARCHAR2(50) UNIQUE,
+Telefono VARCHAR2(9) NOT NULL,
+
+CONSTRAINT fk_usuario FOREIGN KEY (UUID_usuario) REFERENCES Usuario(UUID_usuario)
+);
+
+Create table Carro(
+Placa_carro VARCHAR2(8) PRIMARY KEY,
+Dui_cliente VARCHAR2(10) NOT NULL,
+UUID_modelo VARCHAR2(50) NOT NULL,
+Color VARCHAR2(15) NOT NULL,
+Año Varchar2(5) NOT NULL,
+ImagenCarro BLOB,
+FechaRegistro DATE NOT NULL,
+Descripcion VARCHAR2(200) NOT NULL,
+
+CONSTRAINT fk_cliente FOREIGN KEY (Dui_cliente) REFERENCES Cliente(Dui_cliente),
+CONSTRAINT fk_modelo FOREIGN KEY (UUID_modelo) REFERENCES Modelo(UUID_modelo)
+);
+
+Create table HistorialCarro(
+UUID_historialCarro Varchar2(50) PRIMARY KEY,
+Placa_carro VARCHAR2(8) NOT NULL,
+Descripcion VARCHAR2(150) NOT NULL,
+
+CONSTRAINT fk_carro FOREIGN KEY (Placa_carro) REFERENCES Carro(Placa_carro)
+);
+
+Create table Cita (
+UUID_cita Varchar2(50) PRIMARY KEY,
+Fecha_cita DATE NOT NULL,
+Descripcion VARCHAR2(250) NOT NULL
+);
+
+Create table DetalleCita(
+UUID_DetalleCita Varchar2(50) PRIMARY KEY,
+UUID_cita Varchar2(50) NOT NULL,
+UUID_servicio Varchar2(50) NOT NULL,
+
+CONSTRAINT fk_servicio FOREIGN KEY (UUID_servicio) REFERENCES Servicio(UUID_servicio)
+);
+
+Create table AsignarOrden(
+UUID_AsignarOrden Varchar2(50) PRIMARY KEY,
+UUID_usuario VARCHAR2(50) NOT NULL,
+UUID_DetalleCita Varchar2(50) NOT NULL,
+UUID_estado Varchar2(50) NOT NULL,
+FechaAsignacion DATE NOT NULL,
+FechaFinalizacion DATE NOT NULL,
+Descripcion VARCHAR2(150) NOT NULL,
+
+CONSTRAINT fk_detallecita_tarea FOREIGN KEY (UUID_DetalleCita) REFERENCES DetalleCita(UUID_DetalleCita),
+CONSTRAINT fk_usuario_tarea FOREIGN KEY (UUID_usuario) REFERENCES Usuario(UUID_usuario),
+CONSTRAINT fk_estado FOREIGN KEY (UUID_estado) REFERENCES EstadoAsignarOrden(UUID_estado)
+);
+
+
+Create table DetalleServicio(
+UUID_DetalleServicio Varchar2(50) PRIMARY KEY,
+UUID_DetalleCita Varchar2(50) NOT NULL,
+Coste NUMBER (10,2) CHECK (Coste > 0) NOT NULL,
+
+CONSTRAINT fk_cita_detalle FOREIGN KEY (UUID_DetalleCita) REFERENCES DetalleCita(UUID_DetalleCita)
+);
+
+
+Create table Factura(
+UUID_factura VARCHAR2(50) PRIMARY KEY,
+FechaEmision DATE NOT NULL,
+FechaVencimiento DATE NOT NULL
+);
+
+Create table DetalleFactura(
+UUID_DetalleFactura VARCHAR2(50) PRIMARY KEY,
+UUID_factura VARCHAR2(50) NOT NULL,
+UUID_productoRepuesto VARCHAR2(50) NOT NULL,
+UUID_DetalleServicio VARCHAR2(50)  NOT NULL,
+
+CONSTRAINT fk_detalle_factura FOREIGN KEY (UUID_factura) REFERENCES Factura(UUID_factura),
+CONSTRAINT fk_detalle_item FOREIGN KEY (UUID_productoRepuesto) REFERENCES ProductoRepuesto(UUID_productoRepuesto),
+CONSTRAINT fk_detalle_Dservicio FOREIGN KEY (UUID_DetalleServicio) REFERENCES DetalleServicio(UUID_DetalleServicio)
+);
+
+
+Create table DetalleProductoRepuesto(
+UUID_DetalleProductoRepuesto Varchar2(50) PRIMARY KEY,
+UUID_productoRepuesto VARCHAR2(50) NOT NULL,
+Cantidad NUMBER CHECK (Cantidad > 0)NOT NULL,
+Total NUMBER (10,2) CHECK (Total > 0) NOT NULL,
+
+CONSTRAINT fk_producto_repuesto FOREIGN KEY (UUID_productoRepuesto) REFERENCES ProductoRepuesto(UUID_productoRepuesto)
+); 
+
+
+Create table DetalleProveedor(
+UUID_DetalleProveedor VARCHAR2(50) NOT NULL,
+UUID_productoRepuesto VARCHAR2(50) NOT NULL,
+Dui_proveedor VARCHAR2(10) NOT NULL,
+Precio NUMBER(10, 2) NOT NULL CHECK (Precio > 0),
+Cantidad NUMBER(10, 2) NOT NULL CHECK (Cantidad > 0) ,
+FechaSuministro DATE NOT NULL,
+
+CONSTRAINT fk_producto_proveedor FOREIGN KEY (UUID_productoRepuesto) REFERENCES ProductoRepuesto(UUID_productoRepuesto),
+CONSTRAINT fk_proveedor_producto FOREIGN KEY (Dui_proveedor) REFERENCES Proveedor(Dui_proveedor)
+);
+
+Alter table DetalleCita
+add
+Constraint fk_cita_detalle1 foreign key (UUID_cita) references Cita(UUID_cita)
+
+
+
+CREATE OR REPLACE TRIGGER Trig_validar_fecha_nacimiento
+BEFORE INSERT OR UPDATE ON Empleado
+FOR EACH ROW
+BEGIN
+    -- Validar que la FechaNacimiento sea menor a la fecha actual
+    IF :NEW.FechaNacimiento > SYSDATE THEN
+        RAISE_APPLICATION_ERROR(-20001, 'La Fecha de Nacimiento no puede ser mayor a la fecha actual.');
+    END IF;
+
+    -- Validar que la edad sea al menos 18 años
+    IF ADD_MONTHS(:NEW.FechaNacimiento, 12 * 18) > SYSDATE THEN
+        RAISE_APPLICATION_ERROR(-20002, 'El empleado debe tener al menos 18 años.');
+    END IF;
+END;
+
+
+CREATE OR REPLACE TRIGGER Trig_validar_fecha_registro
+BEFORE INSERT OR UPDATE ON Carro
+FOR EACH ROW
+BEGIN
+    IF :NEW.FechaRegistro <> SYSDATE THEN
+        RAISE_APPLICATION_ERROR(-20001, 'La Fecha de Registro debe ser igual a la fecha actual.');
+    END IF;
+END;
+
+
+CREATE OR REPLACE TRIGGER trig_fecha_cita
+BEFORE INSERT OR UPDATE ON Cita
+FOR EACH ROW
+BEGIN
+    IF TRUNC(:NEW.Fecha_cita) <> TRUNC(SYSDATE) THEN
+        RAISE_APPLICATION_ERROR(-20003, 'La Fecha de la Cita debe ser igual a la fecha actual.');
+    END IF;
+END;
+
+
+CREATE OR REPLACE TRIGGER trig_validar_fecha_asignacion
+BEFORE INSERT OR UPDATE ON AsignarOrden
+FOR EACH ROW
+BEGIN
+    IF TRUNC(:NEW.FechaAsignacion) != TRUNC(SYSDATE) THEN
+        RAISE_APPLICATION_ERROR(-20001, 'La Fecha de Asignación debe ser igual a la fecha actual.');
+    END IF;
+END;
+
+
+CREATE OR REPLACE TRIGGER TRIG_VALIDAR_FECHA_FINALIZACION
+BEFORE INSERT OR UPDATE ON AsignarOrden
+FOR EACH ROW
+DECLARE
+    v_fecha_actual DATE;
+BEGIN
+    v_fecha_actual := TRUNC(SYSDATE);
+    
+    IF :NEW.FechaFinalizacion <= v_fecha_actual + 1 THEN
+        RAISE_APPLICATION_ERROR(-20002, 'La Fecha de Finalización debe ser al menos un día después de la fecha actual.');
+    END IF;
+END;
+
+
+CREATE OR REPLACE TRIGGER trig_validar_fecha_factura
+BEFORE INSERT OR UPDATE ON Factura
+FOR EACH ROW
+BEGIN
+    IF :NEW.FechaEmision != SYSDATE THEN
+        RAISE_APPLICATION_ERROR(-20001, 'La Fecha de Emisión debe ser igual al SYSDATE.');
+    END IF;
+    
+    IF :NEW.FechaVencimiento <= SYSDATE THEN
+        RAISE_APPLICATION_ERROR(-20002, 'La Fecha de Vencimiento debe ser mayor al SYSDATE.');
+    END IF;
+END;
+
+
+CREATE OR REPLACE TRIGGER trg_check_fechaSuministro
+BEFORE INSERT OR UPDATE ON DetalleProveedor
+FOR EACH ROW
+BEGIN
+    IF :NEW.FechaSuministro != TRUNC(SYSDATE) THEN
+        RAISE_APPLICATION_ERROR(-20002, 'La FechaSuministro debe ser la fecha de hoy.');
+    END IF;
+END;
