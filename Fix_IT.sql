@@ -3,7 +3,7 @@ Codigo_Taller VARCHAR2(10) primary key,
 Nombre_Dueno VARCHAR2(50) NOT NULL,
 Apellido_Dueno VARCHAR2(50) NOT NULL,
 CorreoElectronico VARCHAR2(50) UNIQUE,
-Contrasena VARCHAR2(8) NOT NULL,
+Contrasena VARCHAR2(250) NOT NULL,
 Telefono VARCHAR2(15) NOT NULL,
 Direccion VARCHAR2(100) NOT NULL
 );
